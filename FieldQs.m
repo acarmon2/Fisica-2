@@ -1,5 +1,5 @@
-%% Plot in 2D
-% Initial grid
+%% Plot in 2D, tested in Octave 
+% Initial grid in 2D
 a = -10;
 b = 10;
 dxy = 1;
@@ -11,9 +11,11 @@ Ey = zeros(size(meshgrid([a:dxy:b])));
 Ke = 9e9;
 
 % Charge distribution and N is the number of charges
+% [q, x, y], q value and x, y position
 Q = [1e-9, 0, 0; -2e-9, 1, 0];
 N = size(Q, 1);
 
+% Superpostion principle
 for i = 1:N
   Ex = Ex + Q(i, 1)*Ke*((x - Q(i, 2))./((x - Q(i, 2)).^2 + (y - Q(i, 3)).^2).^(3/2));
   Ey = Ey + Q(i, 1)*Ke*((y - Q(i, 3))./((x - Q(i, 2)).^2 + (y - Q(i, 3)).^2).^(3/2));
