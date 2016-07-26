@@ -12,7 +12,7 @@ Ke = 9e9;
 
 % Charge distribution and N is the number of charges
 % [q, x, y], q value and x, y position
-Q = [1e-9, 0, 0; -2e-9, 1, 0];
+Q = [1e-9, -5, 0; -2e-9, 5, 0];
 N = size(Q, 1);
 
 % Superpostion principle
